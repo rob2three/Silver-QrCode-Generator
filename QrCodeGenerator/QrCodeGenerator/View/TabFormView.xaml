@@ -30,6 +30,7 @@
         <ResourceDictionary Source="TextView.xaml"/>
         <ResourceDictionary Source="UrlView.xaml"/>
         <ResourceDictionary Source="vCardView.xaml"/>
+        <ResourceDictionary Source="WifiView.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <DataTemplate x:Key="TabFormView"
                   DataType="viewModel:t">
@@ -49,6 +50,7 @@
                 <ComboBoxItem ToolTip="Send Email">Email</ComboBoxItem>
                 <ComboBoxItem ToolTip="Calender event">Event</ComboBoxItem>
                 <ComboBoxItem ToolTip="Text">Text</ComboBoxItem>
+                <ComboBoxItem ToolTip="Access Wi-Fi">Wi-Fi</ComboBoxItem>
             </ComboBox>
             <TabControl Grid.Row="1"
                         Name="tcBarcodeContent"
@@ -99,6 +101,12 @@
                     <AdornerDecorator>
                         <ContentControl ContentTemplate="{StaticResource TextView}"
                                     Content="{Binding Path=TextView, Mode=OneWay}"/>
+                    </AdornerDecorator>
+                </TabItem>
+                <TabItem Visibility="Collapsed">
+                    <AdornerDecorator>
+                        <ContentControl ContentTemplate="{StaticResource WifiView}"
+                                    Content="{Binding Path=WifiView, Mode=OneWay}"/>
                     </AdornerDecorator>
                 </TabItem>
             </TabControl>

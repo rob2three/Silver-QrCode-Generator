@@ -18,12 +18,19 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:ec="clr-namespace:Gma.QrCodeNet.Encoding;assembly=Gma.QrCodeNet.Encoding">
+                    xmlns:ec="clr-namespace:Gma.QrCodeNet.Encoding;assembly=Gma.QrCodeNet.Encoding"
+                    xmlns:styleAlias="clr-namespace:QrCodeGenerator.Model">
     <ObjectDataProvider x:Key="errorCorrectLevel"
                             MethodName="GetValues"
                             ObjectType="{x:Type sys:Enum}">
         <ObjectDataProvider.MethodParameters>
             <x:Type TypeName="ec:ErrorCorrectionLevel"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+    <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
+                            ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="styleAlias:AuthenticationType"/>
         </ObjectDataProvider.MethodParameters>
     </ObjectDataProvider>
 </ResourceDictionary>

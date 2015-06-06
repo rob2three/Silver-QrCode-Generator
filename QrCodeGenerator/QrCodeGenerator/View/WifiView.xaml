@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModel="clr-namespace:QrCodeGenerator.ViewModel"
+                    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/MainWindowResources.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <DataTemplate x:Key="WifiView"
+                  DataType="viewModel:WifiViewModel">
+        <StackPanel>
+            <TextBlock FontWeight="Bold">SSID</TextBlock>
+            <xctk:WatermarkTextBox Watermark="Network name" TextWrapping="Wrap" Margin="5, 0, 0, 0" 
+                                   Text="{Binding Path=Ssid, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"/>
+            <CheckBox Content="Hidden SSID" Margin="5, 5, 0, 5" 
+                      IsChecked="{Binding Path= HiddenSsid, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}" />
+         
+            <TextBlock FontWeight="Bold">Key-Phrase</TextBlock>
+            <xctk:WatermarkTextBox Watermark="Wi-Fi Password" TextWrapping="Wrap" Margin="5, 0, 0, 0" 
+                                   Text="{Binding Path=Psk, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"/>
+
+            <TextBlock FontWeight="Bold">Authentication</TextBlock>
+            <ComboBox Margin="5, 0, 0, 0"
+                ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
+                  SelectedItem="{Binding Path=Authentication}" />
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

@@ -44,8 +44,7 @@
                 </Hyperlink>
             </TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="10, 5, 0, 0" Text="Developer" VerticalAlignment="Top" />
-            <TextBlock Grid.Column="1" Grid.Row="1" Height="23" Width="Auto" HorizontalAlignment="Left" Margin="10, 5, 0, 0" Text="Silverlancer (Jason He)" VerticalAlignment="Top" >
-            </TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="1" Height="32" Width="224" HorizontalAlignment="Left" Margin="10, 5, 0, 0" VerticalAlignment="Top" ><Run Text="Silverlancer (Jason He)"/><LineBreak/><Run Text="Rob"/><Run Text="2three"/><Run Text=" ("/><Run Text="Robert Kellner"/><Run Text=")"/></TextBlock>
             <TextBlock Grid.Row="2" Grid.Column="0" Height="23" HorizontalAlignment="Left" Margin="10, 5, 0, 0" Text="Copyright" VerticalAlignment="Top" />
             <TextBlock Grid.Column="1" Grid.Row="2" Height="Auto" HorizontalAlignment="Left" Margin="10, 5, 10, 0" 
                        Text="Silver QrCode Generator Copyright (c) 2012 CanXing(Jason) He" VerticalAlignment="Top" TextWrapping="Wrap"/>

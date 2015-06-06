@@ -96,6 +96,27 @@ namespace QrCodeGenerator.Model
                 return false;
         }
 
+        /// <remarks>
+        /// Check IsStringMissing before perform this validation. 
+        /// </remarks>
+        internal static bool IsValidSsid(string ssid)
+        {
+            if (string.IsNullOrWhiteSpace(ssid))
+                return false;
+
+            return true;
+        }
+
+        /// <remarks>
+        /// Check IsStringMissing before perform this validation. 
+        /// </remarks>
+        internal static bool IsValidPsk(string psk)
+        {
+            if (string.IsNullOrWhiteSpace(psk))
+                return false;
+
+            return true;
+        }
 
         #region Validation
 
@@ -133,12 +154,39 @@ namespace QrCodeGenerator.Model
             return null;
         }
 
+        internal static string ValidateSsid(string ssidValue, bool isRequired)
+        {
+            if (StringValidation.IsStringMissing(ssidValue))
+                return isRequired ? Resources.Error_MissingSsid : null;
+            else if (!StringValidation.IsValidSsid(ssidValue))
+                return Resources.Error_MissingSsid;
+            return null;
+        }
+
+        internal static string ValidatePsk(string pskValue, bool isRequired)
+        {
+            if (StringValidation.IsStringMissing(pskValue))
+                return isRequired ? Resources.Error_MissingPsk : null;
+            else if (!StringValidation.IsValidPsk(pskValue))
+                return Resources.Error_MissingPsk;
+            return null;
+        }
+
         internal static string ValidateBirthday(DateTime? bdayValue)
         {
             if (StringValidation.IsDateTimeMissing(bdayValue))
                 return null;
             else if (!StringValidation.IsBirthday(bdayValue))
                 return Resources.Error_Invalid_Birthday;
+            return null;
+        }
+
+        internal static string ValidateSsid(string ssidValue)
+        {
+            if (StringValidation.IsStringMissing(ssidValue))
+                return null;
+            else if (!StringValidation.IsStringMissing(ssidValue))
+                return Resources.Error_MissingSsid;
             return null;
         }
 

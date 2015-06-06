@@ -34,7 +34,8 @@ namespace QrCodeGenerator.ViewModel
             new SMSViewModel(),
             new EmailViewModel(),
             new iCalViewModel(),
-            new TextViewModel()
+            new TextViewModel(),
+            new WifiViewModel()
         };
 
         public event PropertyChangedEventHandler PropertyChanged = null;
@@ -83,6 +84,9 @@ namespace QrCodeGenerator.ViewModel
 
         public TextViewModel TextView
         { get { return (TextViewModel)m_QrViewModelBase[7]; } }
+
+        public WifiViewModel WifiView
+        { get { return (WifiViewModel)m_QrViewModelBase[8]; } }
 
         private string m_Input = string.Empty;
 
